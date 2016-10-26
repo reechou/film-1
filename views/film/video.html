@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>
+        <%= title %>手机迅雷下载_反叛者西瓜影音手机观看_免费电影院手机版</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta name="applicable-device" content="mobile">
+    <meta name="keywords" content="<%= title %>手机迅雷下载,反叛者西瓜影音手机观看">
+    <meta name="description" content="免费电影院手机版为你提供反叛者手机迅雷下载,<%= title %>">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/tv.detail.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        img, iframe {
+            border: none;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include head.html %>
+            <div class="players">
+                <% if(playname == 'tudou'){ %>
+                <iframe border="0" src="<%= path %>" width="100%" height="220" marginwidth="0" framespacing="0" marginheight="0" frameborder="0" scrolling="no" vspale="0" noresize=""></iframe>
+                <% } else if(playname == 'ppyun') { %>
+                <iframe border="0" src="/film/ppyun?vid=<%= vid %>" width="100%" height="220" marginwidth="0" framespacing="0" marginheight="0" frameborder="0" scrolling="no" vspale="0" noresize=""></iframe>
+                <% }else{ %>
+                <iframe border="0" src="/film/player?vid=<%= vid %>&playname=<%= playname %>" width="100%" height="220" marginwidth="0" framespacing="0" marginheight="0" frameborder="0" scrolling="no" vspale="0" noresize=""></iframe>
+                <% } %>
+            </div>
+            <section class="main">
+                <div class="tab globalPadding">
+                    <ul class="tabNav clearfix">
+                        <li><span class="cur">剧集</span></li>
+                        <li><span>简介</span></li>
+                        <li><span>评论</span></li>
+                    </ul>
+                </div>
+                <script type="text/javascript">
+                function is_weixin() {
+                    var ua = navigator.userAgent.toLowerCase();
+                    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                var isWeixin = is_weixin();
+                if (isWeixin) {
+                    var div = document.getElementById("weixin-tip");
+                    div.style.display = "block"
+                }
+
+                function hidead() {
+                    showad = false;
+                    document.getElementById("weixin-tip").style.display = "none";
+                    document.getElementById("weixin-tip").style.display = "none";
+                }
+                </script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+                <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+                <div class="tabConList globalPadding">
+                    <div class="tabCon" style="display:block">
+                        <script type="text/javascript">
+                        $(function() {
+                            var i = 0;
+
+                            function oooTab() {
+                                $(this).addClass("current").siblings().removeClass("current").parent().siblings().hide().siblings("." + $(this).attr("id")).show();
+                            }
+                            $(".tabt span,.tabt2 span").mouseover(oooTab);
+                            $(".tabt3 span").click(oooTab);
+                        });
+                        </script>
+                            <dl class="tab2">
+                                <div class="tbmov-notice">
+                                    <%= notice %>
+                                        <img width="100%" src="" id="qrcode">
+                                        <div class="cont-banner">
+                                            <a href="" id="tudouWeixinID">识别失败的同学务必请点这里</a>
+                                        </div>
+                                        <!-- 微信无法播放请刷新，或者用UC浏览器打开 -->
+                                        <br> 首次打开请耐心等待一会儿，加载需要时间
+                                        <br> 公众号内回复➩【
+                                        <font color="red">
+                                            <%= title %>
+                                        </font>】即可获得下载链接
+                                </div>
+                                <div class="ui-title">
+                                    <% juji.forEach(function(item){ %>
+                                        <% if(item.type != '迅雷下载（需安装手机迅雷）' && item.type != '西瓜影音' && item.type != '网盘下载' && item.type != '快播影音'){ %>
+                                        <div class="ui-cnt">
+                                            <div style="width:100%;">
+                                                <%= item.type %>
+                                            </div>
+                                            <% item.list.forEach(function(name){ %>
+                                                <div class="detail-list fn-clear">
+                                                    <% if(name.state == 0){ %>
+                                                        <a href="/film/playparse?src=<%= src %>&url=<%= name.url %>&random=<%= random %>">
+                                                            <%= name.title %>
+                                                        </a>
+                                                        <% }else{ %>
+                                                            <a href="<%= name.url %>">
+                                                                <%= name.title %>
+                                                            </a>
+                                                        <% } %>
+                                                </div>
+                                                <% }); %>
+                                        </div>
+                                        <% } %>
+                                        <% }); %>
+                            </dl>
+                        </div>
+                        <div class="tabCon">
+                            <ul class="ulTxt clearfix" id="movie_info_ul">
+                                <li>
+                                    <%= sNum %>
+                                </li>
+                                <li>
+                                    <%= category %>
+                                </li>
+                                <li>
+                                    <%= zone %>
+                                </li>
+                                <li>
+                                    <%= year %>
+                                </li>
+                                <li>
+                                    <%= language %>
+                                </li>
+                            </ul>
+                            <p class="movieintro" id="movie_info_intro_s">
+                                <%= desc %>
+                            </p>
+                        </div>
+                        <script type="text/javascript">
+                        MovieInfoCtrl = {
+                            showMoreinfo: function(mod) {
+                                var lis = document.getElementById('movie_info_ul').getElementsByTagName('li');
+                                var len = lis.length;
+                                while (len--) {
+                                    try {
+                                        if (lis[len - 1].getAttribute('df') == '0') {
+                                            lis[len - 1].style.display = '';
+                                        }
+                                    } catch (e) {}
+                                }
+                                if (mod == 1) {
+                                    document.getElementById('movie_info_intro').style.display = '';
+                                    document.getElementById('movieinfo_tigger').style.display = 'none';
+                                } else {
+                                    document.getElementById('movie_info_intro_s').style.display = 'none';
+                                    document.getElementById('movie_info_intro_l').style.display = '';
+                                }
+                            },
+                            showLess: function(mod) {
+                                var lis = document.getElementById('movie_info_ul').getElementsByTagName('li');
+                                var len = lis.length;
+                                while (len--) {
+                                    try {
+                                        if (lis[len - 1].getAttribute('df') == '0') {
+                                            lis[len - 1].style.display = 'none';
+                                        }
+                                    } catch (e) {}
+                                }
+                                if (mod == 1) {
+                                    document.getElementById('movie_info_intro').style.display = 'none';
+                                    document.getElementById('movieinfo_tigger').style.display = '';
+                                } else {
+                                    document.getElementById('movie_info_intro_l').style.display = 'none';
+                                    document.getElementById('movie_info_intro_s').style.display = '';
+                                }
+                            }
+                        };
+                        </script>
+            </section>
+            <%- include footer.html %>
+            </div>
+            <script>
+            // 重置图片尺寸
+            resizeImgCommon('resize_list');
+            $(window).on('resize', function() {
+                resizeImgCommon('resize_list');
+            });
+            // 延迟加载
+            $('img.lazyload').lazyload({
+                data_attribute: 'src',
+                threshold: 30,
+            });
+                //二维码展示
+                $(function(){
+                    $.get('/film/qrcode', function(data){
+                        $('#tudouWeixinID').attr('href', data.member_url);
+                        $('#qrcode').attr('src', data.img);
+                    });
+                })
+            </script>
+</body>
+
+</html>

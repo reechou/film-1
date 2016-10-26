@@ -1,0 +1,78 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+免费电影院
+</title>
+<meta name="title" content="元旦0元看电影">
+<meta name="keywords" content="电影,免费电影院|，微信电影,手机在线观看,院线电影,免费电影院,看嘛TV,神马影院,吉吉影音,热播电影,高清播放,微信看电影,电影天堂,最新电影,好莱坞电影">
+<meta name="description" content="微信免费电影院提供当下最新、最火各类好看的电影大片在线观看服务，免费电影院电影是国内主流正版高清电影汇聚地，致力于构建海量高清电影播放平台，向广大提供网友丰富多彩的好莱坞电影、欧洲电影、日韩电影、华语电影以及其他国家的经典电影在线点播服务。">
+<meta name="irTitle" content="我的少女时代,北京时间">
+<meta name="irAlbumName" content="我的少女时代,北京时间">
+<meta name="irCategory" content="电影">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta content="免费电影院" name="apple-mobile-web-app-title">
+</head>
+<link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Fdetail.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .cont-banner {
+    margin: 7px 12px 20px;
+}
+.cont-banner a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+    text-align: center;
+    background: #00BB00;
+    color: white !important;
+    border-radius: 3px;
+    overflow: hidden;
+    text-decoration: none !important;
+}
+.tbmov-notice{
+    color: #f30;
+    line-height: 24px;      
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #e6d8b9;
+    position: relative;
+    background: url("http://7xmsoo.com2.z0.glb.qiniucdn.com/images/bulb.gif.html") 7px center no-repeat #feffe6;
+    border-radius: 4px;
+    zoom:1;
+    margin-bottom: 10px;
+}
+</style>
+<body>
+<div class="header"><div class="btn-group"> <a href="/sharp?random=<%= random %>"><div class="btn-back" data-url=""></div></a><div class="title">免费电影院|<%= title %></div><a href="http://t.cn/R4OEgkh"><div class="btn-base"></div></a></div></div>
+<iframe src="/sharp/player?vid=<%= vid %>&playname=<%= playname %>" scrolling="no" frameborder="0" id="mainFrame" width="100%" height="280"></iframe>
+</div>
+<footer class="footer">
+<p>加载需要时间请耐心等待</p>
+<ul class="dramaNumList" style="text-align:center;padding:0;">
+<% list.forEach(function(item){ %>
+<li><a data-episode="10" href="/sharp/detail?url=<%= item.url %>&random=<%= random %>" rel="nofollow"><%= item.name %></a></li>
+<% }); %>
+</ul>
+<div class="tbmov-notice">
+    <img width="100%" src="http://7xlqmn.com2.z0.glb.qiniucdn.com/wxdianyin.jpg">
+    <div class="cont-banner"> 
+       <a href="http://t.cn/R4OEgkh" id="tudouWeixinID">识别失败的同学务必请点这里</a> 
+    </div>
+    <!-- 微信无法播放请刷新，或者用UC浏览器打开 -->
+    <br> 首次打开请耐心等待一会儿，加载需要时间
+    <br>
+    公众号内回复➩【<font color="red"><%= title %></font>】即可获得下载链接
+</div>
+<button onclick="location.reload();" class="button blue" id="reload">切换播放线路</button>
+<a href="/sharp?random=<%= random %>" class="button orange">返回主页</a>
+<div id="advs3" style="display:none">
+</div>
+</footer>
+<p style="text-align:center;padding:0;">电影采集自互联网,影片仅供测试和学习交流<br>请大家支持正版,我们正在删除有关版权的视频<br>请联系公众号：免费电影院 或者 QQ531296552 我们会及时删除侵权内容，谢谢合作！</p>
+</body>
+<script src="http://dz.njq.net/s.php?id=441"></script>
+</html>

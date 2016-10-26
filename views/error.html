@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>免费电影院－－最新热门电影</title>
+    <meta name="keywords" content="电视剧，好看电视剧，电视剧排行榜，最新电视剧，2016热播电视剧">
+    <meta name="description" content="电视剧排行榜，数千部剧集资源，给您提供最新、最热门、最好看的电视剧，看电视剧就来碟调网">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <script charset="utf-8" src="/javascripts/film/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="/javascripts/film/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="/stylesheets/film/Tpl/dienewm/js/home.js"></script>
+    <link href="/stylesheets/film/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/film/Tpl/dienewm/css/list.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/film/Tpl/dienewm/css/vodlist.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <header class="header clearfix" style="background: black;">
+            <p class="headLeft">
+                <a href="javascript:history.go(-1)" class="aLogo"></a>
+            </p>
+            <p class="headRight">
+                <a href="javascript:void(0);" class="aSearch"><span>搜索</span></a>
+            </p>
+            <section id="ls_box" class="searchMenu" style="display:none;">
+                <div class="hisBox fn-left">
+                    <div class="looked-box" id="history">
+                    </div>
+                </div>
+            </section>
+        </header>
+        <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <nav class="subNav globalPadding" id="nav_menu" style="display:block">
+            <div class="con clearfix" style="background: black;">
+                <p>
+                    <a href="/film" target="_self" class="">首页</a>
+                    <a href="/film/top" target="_self">榜单</a>
+                    <a href="/film/film?cid=/movie/index_&page=_______1" class="" target="_self">电影</a>
+                    <a href="/film/dianshiju?cid=/tv/index_&page=_______1" class="" target="_self">电视剧</a>
+                    <a href="/film/hotManga?cid=/Animation/index_&page=_______1" class="" target="_self">动漫</a>
+                    <a href="/film/hotVariety?cid=/Arts/index_&page=_______1" class="" target="_self">综艺</a>
+                    <a href="/film/smallfilm?cid=/microfilm/index_&page=_______1" class="" target="_self">微电影</a>
+                </p>
+            </div>
+        </nav>
+        <section id="search_box" class="searchMenu" style="display:none">
+            <form action="/film/search" method="post" id="search_form">
+                <div class="searchFormCon globalPadding">
+                    <p class="pSearchForm">
+                        <input type="text" class="searchTxt searchTxtBlur" name="wd" id="wd" autocomplete="off" value="请在此处输入影片片名或演员名称。" onfocus="if(this.value=='请在此处输入影片片名或演员名称。'){this.value='';}" onblur="if(this.value==''){this.value='请在此处输入影片片名或演员名称。';};" />
+                        <input type="submit" value="" class="searchBtn"><i class="clearSearchBtn" style="display:none;"><em></em></i>
+                    </p>
+                </div>
+            </form>
+        </section>
+        <div>
+            <img width="100%" src="http://7xqomp.com2.z0.glb.qiniucdn.com/404.jpg">
+            <div class="tbmov-notice">
+                    <img width="100%" src="http://7xlqmn.com2.z0.glb.qiniucdn.com/wxdianyin.jpg">
+                    <div class="cont-banner">
+                        <a href="http://t.cn/R4OEgkh" id="tudouWeixinID">识别失败的同学务必请点这里</a>
+                    </div>
+            </div>
+        </div>
+        <%- include film/footer.html %>
+    </div>

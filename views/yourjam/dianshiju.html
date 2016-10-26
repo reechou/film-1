@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>免费电影院-热门电影、美剧在线免费观看</title>
+    <meta name="keywords" content="电影，美剧">
+    <meta name="description" content="免费电影院提供:最新热门电影，最新热门美剧、韩剧、日剧等剧集在线观看">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/0.2.0/weui.css">
+</head>
+<script type="text/javascript">
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<body>
+    <div id="shareImage" style="display: none;">
+        <img src="http://7xlqmn.com2.z0.glb.qiniucdn.com/wxfree_logo.jpg">
+    </div>
+    <div class="profile_info">
+        <span class="radius_avatar profile_avatar"><img src="http://7xlqmn.com2.z0.glb.qiniucdn.com/wxfree_logo.jpg"></span>
+        <strong class="profile_nickname"><%= member_public.title %></strong>
+        <p class="profile_desc">关注
+            <%= member_public.title %>｜从此免费看电影</p>
+        <div class="profile_opr">
+            <a href="<%= member_public.url %>" id="js_btn_add_contact" class="weui_btn weui_btn_plain_primary">进入公众号</a>
+        </div>
+    </div>
+    <%- include header.html %>
+        <div id="menu">
+            <%- include sider.html %>
+        </div>
+        <div id="content">
+            <div class="c-box">
+                <div class="title">
+                    <h2><%= category %></h2>
+                </div>
+                <div class="plist">
+                    <ul>
+                        <% film.forEach(function(item){ %>
+                            <li>
+                                <div class="video">
+                                    <a class="pic" title="<%= item.title %>" href="/yourjam/detail?url=<%= item.url %>&title=<%= item.title %>&random=<%= random %>">
+                                    <img width="90" height="120" alt="<%= item.title %>" src="<%= item.img %>"></a>
+                                    <a class="set" href="/yourjam/detail?url=<%= item.url %>&title=<%= item.title %>&random=<%= random %>">
+                                        <%= item.title %>
+                                    </a>
+                                </div>
+                                <a title="<%= item.title %>" href="/yourjam/detail?url=<%= item.url %>&title=<%= item.title %>&random=<%= random %>">
+                                    <%= item.title %>
+                                </a>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <% if(recommend == 0){ %>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="/yourjam/dianshiju?page=1&cid=<%= cid %>&random=<%= random %>">首页</li>
+                                <li><a href="/yourjam/dianshiju?page=<%= page<=1 ? 1 : (page-1) %>&cid=<%= cid %>&random=<%= random %>" style="color:red;">上一页</a></li>
+                            <li><a href="/yourjam/dianshiju?page=<%= parseInt(page)+1 %>&cid=<%= cid %>&random=<%= random %>" style="color:red;">下一页</a></li>
+                        </ul>
+                    </div>
+                    <% } %>
+                        <script type="text/javascript">
+                        if (top.location != self.location) {
+                            top.location = self.location; //防止页面被框架包含
+                        }
+                        </script>
+<%- include footer.html %>
+            </div>
+        </div>
+        </div>
+        </div>
+</body>
+
+</html>

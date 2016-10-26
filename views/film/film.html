@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>免费电影院－－最新热门电影</title>
+    <meta name="keywords" content="电视剧，好看电视剧，电视剧排行榜，最新电视剧，2016热播电视剧">
+    <meta name="description" content="电视剧排行榜，数千部剧集资源，给您提供最新、最热门、最好看的电视剧，看电视剧就来碟调网">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/list.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/vodlist.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include head.html %>
+            <section class="main">
+                <div class="tabCon">
+                    <div class="tab globalPadding clearfix" id="tab"> <a href="javascript:void(0);" class="selectBtn ">分类<i class="moreArrowBtn"></i></a>
+                    </div>
+                </div>
+                <ul class="selectList" style="display:none;">
+                    <li id="area_list">
+                        <!--分类2-->
+                        <div class="con" id="area_list_p">
+                        </div>
+                        <a class="cur" href="javascript:void(0);">电影索引</a>
+                        <a href="#" class="f14">重置条件</a>
+                    </li>
+                    <li id="listtitle" style="overflow: hidden;overflow-x: scroll;-webkit-overflow-scrolling: touch;">
+                        <!--分类-->
+                        <div class="con" id="firstss_list_p">
+                            <p>
+                                <a class="cur" target="_self" href="/film/film?cid=/movie/index_&page=_______1&random=<%= random %>" data="id-0">全部</a>
+                                <a href="/film/film?cid=/Comedy/index_&page=_______1&random=<%= random %>" data="id-9">喜剧片</a><a href="/film/film?cid=/Action/index_&page=1_______1&random=<%= random %>" data="id-8">动作片</a><a href="/film/film?cid=/Sciencefiction/index_&page=1_______1&random=<%= random %>" data="id-11">科幻片</a><a href="/film/film?cid=/Horror/index_&page=1_______1&random=<%= random %>" data="id-12">恐怖片</a><a href="/film/film?cid=/Love/index_&page=1_______1&random=<%= random %>" data="id-10">爱情片</a><a href="/film/film?cid=/War/index_&page=1_______1&random=<%= random %>" data="id-13">战争片</a><a href="/film/film?cid=/Drama/index_&page=1_______1&random=<%= random %>" data="id-26">剧情片</a> </p>
+                        </div>
+                    </li>
+                    </notin>
+                    <li id="first_list" style="overflow: hidden;overflow-x: scroll;-webkit-overflow-scrolling: touch;">
+                        <!--类型-->
+                        <div class="con" id="first_list_p">
+                            <p>
+                                <a class="cur" href="#" data="mcid-0">全部</a>
+                                <a href="/film/film?cid=/movie/index_&page=_8______1&random=<%= random %>" data='mcid-8'>动作</a><a href="/film/film?cid=/movie/index_&page=_45______1&random=<%= random %>" data='mcid-45'>谍战</a><a href="/film/film?cid=/movie/index_&page=_44______1&random=<%= random %>" data='mcid-44'>武侠</a><a href="/film/film?cid=/movie/index_&page=_43______1&random=<%= random %>" data='mcid-43'>惊悚</a><a href="/film/film?cid=/movie/index_&page=_42______1&random=<%= random %>" data='mcid-42'>悬疑</a><a href="/film/film?cid=/movie/index_&page=_41______1&random=<%= random %>" data='mcid-41'>魔幻</a><a href="/film/film?cid=/movie/index_&page=_40______1&random=<%= random %>" data='mcid-40'>犯罪</a><a href="/film/film?cid=/movie/index_&page=_39______1&random=<%= random %>" data='mcid-39'>警匪</a><a href="/film/film?cid=/movie/index_&page=_38______1&random=<%= random %>" data='mcid-38'>灾难</a><a href="/film/film?cid=/movie/index_&page=_37______1&random=<%= random %>" data='mcid-37'>古装</a><a href="/film/film?cid=/movie/index_&page=_36______1&random=<%= random %>" data='mcid-36'>奇幻</a><a href="/film/film?cid=/movie/index_&page=_35______1&random=<%= random %>" data='mcid-35'>冒险</a><a href="/film/film?cid=/movie/index_&page=_34______1&random=<%= random %>" data='mcid-34'>生活</a><a href="/film/film?cid=/movie/index_&page=_33______1&random=<%= random %>" data='mcid-33'>励志</a><a href="/film/film?cid=/movie/index_&page=_129______1&random=<%= random %>" data='mcid-129'>家庭</a><a href="/film/film?cid=/movie/index_&page=_31______1&random=<%= random %>" data='mcid-31'>青春</a><a href="/film/film?cid=/movie/index_&page=_30______1&random=<%= random %>" data='mcid-30'>歌舞</a><a href="/film/film?cid=/movie/index_&page=_39______1&random=<%= random %>" data='mcid-29'>文艺</a><a href="/film/film?cid=/movie/index_&page=_28______1&random=<%= random %>" data='mcid-28'>历史</a><a href="/film/film?cid=/movie/index_&page=_27______1&random=<%= random %>" data='mcid-27'>伦理</a><a href="/film/film?cid=/movie/index_&page=_26______1&random=<%= random %>" data='mcid-26'>剧情</a><a href="/film/film?cid=/movie/index_&page=_13______1&random=<%= random %>" data='mcid-13'>战争</a><a href="/film/film?cid=/movie/index_&page=_12______1&random=<%= random %>" data='mcid-12'>恐怖</a><a href="/film/film?cid=id-1&page=mcid-11&random=<%= random %>" data='mcid-11'>科幻</a><a href="/film/film?cid=/movie/index_&page=_10______1&random=<%= random %>" data='mcid-10'>爱情</a><a href="/film/film?cid=/movie/index_&page=_9______1&random=<%= random %>" data='mcid-9'>喜剧</a><a href="/film/film?cid=/movie/index_&page=_115______1&random=<%= random %>" data='mcid-115'>传记</a><a href="/film/film?cid=/movie/index_&page=_122______1&random=<%= random %>" data='mcid-122'>抗日</a><a href="/film/film?cid=/movie/index_&page=_124______1&random=<%= random %>" data='mcid-124'>预告</a> </p>
+                        </div>
+                    </li>
+<!--                     <li id="third_list" style="overflow: hidden;overflow-x: scroll;-webkit-overflow-scrolling: touch;">
+                        
+                        <div class="con" id="third_list_p">
+                            <p>
+                                <a class="cur" href="/film/film?cid=id-1&page=p-1" data="year-0">全部</a>
+                                <a href='/film/film?cid=id-1&page=year-2016' data='year-2016'>2016</a><a href='/film/film?cid=id-1&page=year-2015' data='year-2015'>2015</a><a href='/film/film?cid=id-1&page=year-2014' data='year-2014'>2014</a><a href='/film/film?cid=id-1&page=year-2013' data='year-2013'>2013</a><a href='/film/film?cid=id-1&page=year-2012' data='year-2012'>2012</a><a href='/film/film?cid=id-1&page=year-2011' data='year-2011'>2011</a><a href='/film/film?cid=id-1&page=year-2010' data='year-2010'>2010</a><a href='/film/film?cid=id-1&page=year-2009' data='year-2009'>2009</a><a href='/film/film?cid=id-1&page=year-2008' data='year-2008'>2008</a><a href='/film/film?cid=id-1&page=year-2007' data='year-2007'>2007</a><a href='/film/film?cid=id-1&page=year-2006' data='year-2006'>2006</a><a href='/film/film?cid=id-1&page=year-2005' data='year-2005'>2005</a><a href='/film/film?cid=id-1&page=year-2004' data='year-2004'>2004</a><a href='/film/film?cid=id-1&page=year-2003' data='year-2003'>2003</a> </p>
+                        </div>
+                    </li> -->
+                </ul>
+                <!-- // filter-focus end -->
+                <!-- filter-focus end -->
+                <div class="ui-bar fn-clear" style="height:45px; margin-bottom:10px;">
+                    <!-- view-mode end /movie/index_1_____addtime__1.html -->
+                    <div class="view-filter">
+                        <a href="/film/film?cid=/movie/index_&page=_____addtime__1&random=<%= random %>" class=' order' data="order-addtime"><span>按时间</span></a><em>|</em>
+                        <a href="/film/film?cid=/movie/index_&page=_____hits__1&random=<%= random %>" class='order' data="order-hits"><span>按人气</span></a><em>|</em>
+                        <a href="/film/film?cid=/movie/index_&page=_____gold__1&random=<%= random %>" class='order' data="order-gold"><span>按评分</span></a>
+                    </div>
+                </div>
+                <!-- // ui-bar end -->
+                <div class="globalPadding" id="data_list">
+                    <ul id="resize_list" class="picTxt picTxtA clearfix">
+                        <% list.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                    <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                    <span class="sTit"><%= item.title %></span>
+                                </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+                <div class="ui-bar list-page fn-clear">
+                    <div class="ui-page-big ui-pages" id="long-page">
+                        <strong>共<%= total %>部</strong>&nbsp;<a href="/film/film?cid=<%= cid %>&page=<%= page %>&p=<%= p<=1 ? 1 : (p-1) %>&random=<%= random %>" class="next pagegbk">上一页</a>&nbsp;<a href="/film/film?cid=<%= cid %>&page=<%= page %>&p=<%= parseInt(p)+1 %>&random=<%= random %>" class="next pagegbk">下一页</a></div>
+                </div>
+                <!-- // tbmov-box end -->
+            </section>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+            <script>
+            // 重置图片尺寸
+            $('#data_list img').lazyload({
+                data_attribute: 'src',
+                threshold: 30
+            });
+            </script>
+            <%- include footer.html %>
+    </div>
+</body>
+
+</html>

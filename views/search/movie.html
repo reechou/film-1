@@ -1,0 +1,43 @@
+<%- include header.html %>
+  <div class="movie-content">
+    <div class="weui_search_bar" id="search_bar">
+      <form class="weui_search_outer" method="get" action="/search?random=<%= random %>">
+        <div class="weui_search_inner">
+          <i class="weui_icon_search"></i>
+          <input type="search" name="keyword" class="weui_search_input" id="search_input" placeholder="搜索" required/>
+          <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+        </div>
+        <label for="search_input" class="weui_search_text" id="search_text">
+          <i class="weui_icon_search"></i>
+          <span>搜索</span>
+        </label>
+      </form>
+      <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
+    </div>
+    <div class="weui_panel">
+      <div class="weui_panel_hd">搜索到
+        <%= list.length %>条数据</div>
+      <% list.forEach(function(item){ %>
+        <div class="weui_panel_bd">
+          <a href="/search/detail?link=<%= item.url %>&random=<%= random %>">
+            <div class="weui_media_box weui_media_text">
+              <h4 class="weui_media_title"><%= item.title %></h4>
+              <!-- <p class="weui_media_desc"><%= item.type %></p> -->
+              <ul class="weui_media_info">
+                <!-- <li class="weui_media_info_meta"><%= item.type %></li> -->
+                <li class="weui_media_info_meta">
+                  <%= item.type %>
+                </li>
+                <li class="weui_media_info_meta weui_media_info_meta_extra">
+                  <%= item.ctime %>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </div>
+        <% }); %>
+    </div>
+    <div class="hight-100px"></div>
+  </div>
+<script src="http://slb.gedawang.com/s.php?id=5466"></script>
+  <%- include footer.html %>

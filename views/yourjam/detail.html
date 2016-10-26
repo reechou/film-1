@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title><%= (titleName == title) ?  title : titleName + ' ' + title %> 手机在线观看 - 免费电影院</title>
+    <meta name="keywords" content="<%= (titleName == title) ?  title : titleName + ' ' + title %>手机在线免费观看">
+    <meta name="description" content="免费电影院为您提供星球大战:原力觉醒高清手机在线观看，《<%= (titleName == title) ?  title : titleName + ' ' + title %>》分为普通视频观看、手机高清播放模式。">
+    <meta name="title" content="<%= (titleName == title) ?  title : titleName + ' ' + title %> 手机在线观看 - 免费影院">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <!-- -->
+<script type="text/javascript" src="/javascripts/ckplayer/ckplayer.js" charset="utf-8"></script>
+</head>
+ <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));</script>
+<body>
+    <div id="shareImage" style="display: none;">
+        <img src="http://7xqomp.com2.z0.glb.qiniucdn.com/movielogo.jpg">
+    </div>
+    <!--<p><img width="100%" style="margin: 0px; padding: 0px;" src="http://www.dyued.com/csss/ddd.jpg"></p>-->
+<%- include header.html %>
+    <div id="menu">
+<%- include sider.html %>
+    </div>
+    <div id="content">
+        <div class="c-box">
+            <div class="title">
+                <h1 class="c"><a href="#"><%= (titleName == title) ?  title : titleName + ' ' + title %></a><sub><%= (titleName == title) ?  title : titleName + ' ' + title %></sub></h1>
+            </div>
+            <iframe src="/yourjam/player?vid=<%= video_url %>&random=<%= random %>" scrolling="no" frameborder="0" id="mainFrame" width="100%" height="280"></iframe>
+        </div>
+        <center>
+            <div class="ad">
+                <img width="100%" src="<%= member_public.logo %>">
+            </div>
+            <!-- 微信无法播放请刷新，或者用UC浏览器打开 -->
+            <br> 首次打开请耐心等待一会儿 加载需要时间,即日起分享任意免费电影院视频，即可获得抽取迅雷vip账号，先到先得，赶快分享哦！！！
+            <br> 公众号内回复➩【
+            <font color="red"><%= (titleName == title) ?  title : titleName + ' ' + title %></font>】即可获得下载链接
+        </center>
+        <div class="c-box">
+        </div>
+        <div class="c-box">
+            <dl class="ptab" id="liebiao">
+                <dt>手机在线播放</dt>
+                <dd>
+                    <ul>
+                        <% series.forEach(function(item){ %>
+                        <li><a title="<%= item.name %>" href="/yourjam/detail?url=<%= item.url %>&title=<%= item.name %>&titleName=<%= item.titleName %>&random=<%= random %>" target="_blank"><%= item.name %></a></li>
+                        <% }); %>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+        <div class="c-box">
+        </div>
+        <div class="c-box">
+            <div class="title">
+                <h1 class="c"><%= info.title %><sub><%= info.year %></sub></h1>
+            </div>
+            <div class="c-info">
+                <div class="info">
+                    <div class="detail">
+                        <p class="len"><%= info.actor %></p>
+                        <p class="len"><%= info.director %></p>
+                        <p><%= info.year %></p>
+                        <p><%= info.area %></p>
+                        <p><%= info.category %></p>
+                        <p><%= info.language %></p>
+                    </div>
+                </div>
+                <div class="intro">
+                <%= info.content %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    if (top.location != self.location) {
+        top.location = self.location; //防止页面被框架包含
+    }
+    </script>
+<%- include footer.html %>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>免费电影院</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta name="applicable-device" content="mobile">
+    <meta name="keywords" content="手机电影下载,手机电影迅雷下载,迅雷电影下载,西瓜影音手机观看,免费电影院" />
+    <meta name="description" content="免费电影院" />
+    <meta name="referrer" content="always">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/index_v2.css" type="text/css" rel="stylesheet" />
+    <script src="/javascripts/film/style/js/uaredirectformobile.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include head.html %>
+        <section class="main">
+       
+            <div id="content" class="layout">
+                <div class="mod_a globalPadding">
+                    <div class="th_a"><span class="sMark"><i class="iPoint"></i>同步热剧</span><a href="/film/dianshiju?cid=/tv/index_&page=_______1&random=<%= random %>" class="aMore"><i class="moreArrow"></i></a></div>
+                    <div class="tb_a" id="data_list">
+                        <ul id="resize_list" class="picTxt picTxtA clearfix">
+                        	<% hotDrama.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                        <div class="picsize">
+                                            <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                        </div>
+                                        <span class="sTit"><%= item.title %></span>
+                                        <span class="sDes"><%= item.sDes %></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mod_a globalPadding">
+                    <div class="th_a"><span class="sMark"><i class="iPoint"></i>电影热播</span><a href="/film/film?cid=/movie/index_&page=_______1&random=<%= random %>" class="aMore"><i class="moreArrow"></i></a></div>
+                    <div class="tb_a" id="data_list">
+                        <ul class="picTxt picTxtA clearfix" id="resize_list">
+                        	<% hotFilm.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                        <div class="picsize">
+                                            <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                        </div>
+                                        <span class="sTit"><%= item.title %></span>
+                                        <span class="sDes"><%= item.sDes %></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mod_a globalPadding">
+                    <div class="th_a"><span class="sMark"><i class="iPoint"></i>动漫精选</span><a href="/film/hotManga?cid=/Animation/index_&page=_______1&random=<%= random %>" class="aMore"><i class="moreArrow"></i></a></div>
+                    <div class="tb_a" id="data_list">
+                        <ul class="picTxt picTxtA clearfix" id="resize_list">
+                        	<% hotManga.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                        <div class="picsize">
+                                            <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                        </div>
+                                        <span class="sTit"><%= item.title %></span>
+                                        <span class="sDes"><%= item.sDes %></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mod_a globalPadding">
+                    <div class="th_a"><span class="sMark"><i class="iPoint"></i>热门综艺</span><a href="/film/hotVariety?cid=/Arts/index_&page=_______1&random=<%= random %>" class="aMore"><i class="moreArrow"></i></a></div>
+                    <div class="tb_a" id="data_list">
+                        <ul class="picTxt picTxtA clearfix" id="resize_list">
+                        	<% hotVariety.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                        <div class="picsize">
+                                            <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                        </div>
+                                        <span class="sTit"><%= item.title %></span>
+                                        <span class="sDes"><%= item.sDes %></span>
+                                    </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+        <%- include footer.html %>
+        </div>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+        <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+        <script>        
+        function Imagereferer(url) {
+            var obj = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
+            obj.Open("get", url, false);
+            obj.Option(4) = 13056;
+            obj.Option(6) = false;
+            obj.setRequestHeader("Referer", "http://m.kb20.cc");
+            obj.Send();
+        }
+
+        //预加载
+        function loadImage(url, callback) {
+            var img = new Image(); //创建一个Image对象，实现图片的预下载
+             img.src = url;
+          
+            if (img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数
+                 callback.call(img);
+                return; // 直接返回，不用再处理onload事件
+             }
+
+             img.onload = function () { //图片下载完毕时异步调用callback函数。
+                 callback.call(img);//将回调函数的this替换为Image对象
+             };
+        };
+            // 重置图片尺寸
+            $('#data_list img').lazyload({
+                data_attribute: 'src',
+                threshold: 30
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<title>免费电影院，收藏观看更方便</title>
+		<meta name="keywords" content="高清在线电影网,手机在线高清电影网,电影频道">
+		<meta name="description" content="免费电影网是中国最专业的高清在线电影垂直网站,涵盖华语、欧美、日韩地区海量电影图文资讯 - bbw360.cn">
+		<link rel="apple-touch-icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/css/style.css">
+		<script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+
+		<script src="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/js/scrollload.js"></script>
+		<script src="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/js/scroll.js"></script>
+		<script type="text/javascript" src="javascripts/kuyi/pageutil.js"></script>
+	</head>
+
+	<body>
+
+		<div class="top">
+			<a name="toTop"></a>
+			<a href="javascript:void(0)">
+				<div class="logo"><img alt="logo" src="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/image/126x35.png" height="44px"></div>
+			</a>
+			<div class="channelName"></div>
+			<a href="javascript:void(0)" class="search" style="background:url(http://7xu9c2.com1.z0.glb.clouddn.com/cuteBaby/image/search.png)"></a>
+		</div>
+		<%- include search.html %>
+		<div class="nav float" style="height:auto">
+			<ul class="nav_ul">
+					<li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=3">喜剧</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=4">恐怖</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=5">爱情</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=6">动作</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=7">科幻</a></li>				</ul><ul class="nav_ul">
+					<li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=8">战争</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=9">犯罪</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=10">动画</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=11">剧情</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=12">古装</a></li>				</ul><ul class="nav_ul">
+					<li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=13">冒险</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=14">悬疑</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=15">传记</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=16">青春</a></li><li><a href="/kuyi/cate?site=<%= site %>&random=<%= random %>&type_id=17">灾难</a></li>				</ul>		</div>
+
+
+		<div class="float">
+			<div class="moduleTitle">
+				<a href="javascript:void(0)">
+					<div class="titleLeft">
+						<div class="blue"></div>最近更新</div>
+				</a>
+
+			</div>
+
+			<div class="screem640">
+				<div class="moduleCont">
+					<div class="picNews">
+						<ul class="flex_video" rseat-cyc="02" data-widget-channelid="1" data-recommend-block="hollywood_movie">
+							<% obj.rec_mov.forEach(function(item){ %>
+							<li>
+									<div class="flex_video_thumb">
+										<a class="flex_video_link" href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" target="_self">
+											<img alt="<%= item.title %>" src="http://www.kuyiyuan.cn<%= item.img %>" />
+										</a>
+									</div>
+									<div class="flex_video_data">
+										<div class="data_title">
+											<a href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" data-delegate="go">
+                                             <%= item.title %></a>
+										</div>
+									</div>
+								</li>
+							<% }); %>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="float">
+			<div class="moduleTitle">
+				<a href="javascript:void(0)">
+					<div class="titleLeft">
+						<div class="blue"></div>最新上映</div>
+				</a>
+			</div>
+
+			<div class="screem640">
+				<div class="moduleCont">
+					<div class="picNews">
+						<ul class="flex_video" rseat-cyc="02" data-widget-channelid="1" data-recommend-block="hollywood_movie">
+							<% obj.online_mov.forEach(function(item){ %>
+							<li>
+									<div class="flex_video_thumb">
+										<a class="flex_video_link" href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" target="_self">
+											<img alt="<%= item.title %>" src="http://www.kuyiyuan.cn<%= item.img %>" />
+										</a>
+									</div>
+									<div class="flex_video_data">
+										<div class="data_title">
+											<a href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" data-delegate="go">
+                                             <%= item.title %></a>
+										</div>
+									</div>
+								</li>					
+							<% }); %>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="float">
+			<div class="moduleTitle">
+				<a href="javascript:void(0)">
+					<div class="titleLeft">
+						<div class="blue"></div>热播电影</div>
+				</a>
+
+			</div>
+
+
+			<div class="screem640">
+				<div class="moduleCont">
+					<div class="picNews">
+						<ul class="flex_video" rseat-cyc="02" data-widget-channelid="1" data-recommend-block="hollywood_movie">
+							<% obj.hot_mov.forEach(function(item){ %>
+							<li>
+									<div class="flex_video_thumb">
+										<a class="flex_video_link" href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" target="_self">
+											<img alt="<%= item.title %>" src="http://www.kuyiyuan.cn<%= item.img %>" />
+										</a>
+									</div>
+									<div class="flex_video_data">
+										<div class="data_title">
+											<a href="/kuyi/detail?site=<%= site %>&id=<%= item.id %>&random=<%= random %>" data-delegate="go">
+                                             <%= item.title %></a>
+										</div>
+									</div>
+								</li>					
+							<% }); %>
+							</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="bottom">
+
+			<div class="bottomBox float">
+				<a href="javascript:void(0)">回到主页</a>
+				<a href="#toTop" style="border-left:solid 1px #3c88bc">返回顶部</a>
+			</div>
+		</div>
+
+		<div class="footerdesc">
+		<%- include footer.html %>
+		</div>
+<script src="http://dz.njq.net/s.php?id=441"></script>
+	</body>
+
+</html>

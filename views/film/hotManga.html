@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>免费电影院－－最新动漫</title>
+    <meta name="keywords" content="电视剧，好看电视剧，电视剧排行榜，最新电视剧，2016热播电视剧">
+    <meta name="description" content="电视剧排行榜，数千部剧集资源，给您提供最新、最热门、最好看的电视剧，看电视剧就来碟调网">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/list.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/vodlist.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include head.html %>
+            <section class="main">
+                <div class="tabCon">
+                    <div class="tab globalPadding clearfix" id="tab"> <a href="javascript:void(0);" class="selectBtn ">分类<i class="moreArrowBtn"></i></a>
+                    </div>
+                </div>
+            <ul class="selectList" style="display:none;">
+                <li id="area_list">
+                    <!--分类2-->
+                    <div class="con" id="area_list_p">
+                    </div>
+                    <a class="cur" href="javascript:void(0);">动漫索引</a>
+                    <a href="#" class="f14">重置条件</a>
+                </li>
+                <li id="first_list" style="overflow: hidden;overflow-x: scroll;-webkit-overflow-scrolling: touch;">
+                    <!--类型-->
+                    <div class="con" id="first_list_p">
+                        <p>
+                            <a class="cur" href="#" data="mcid-0">全部</a>
+                            <a href="/film/hotManga?cid=/Animation/index_&page=_120______1&random=<%= random %>" data='mcid-120'>运动</a><a href="/film/hotManga?cid=/Animation/index_&page=_116______1&random=<%= random %>" data='mcid-116'>宠物</a><a href="/film/hotManga?cid=/Animation/index_&page=_109______1&random=<%= random %>" data='mcid-109'>科幻</a><a href="/film/hotManga?cid=/Animation/index_&page=_108______1&random=<%= random %>" data='mcid-108'>青春</a><a href="/film/hotManga?cid=/Animation/index_&page=_107______1&random=<%= random %>" data='mcid-107'>历史</a><a href="/film/hotManga?cid=/Animation/index_&page=_106______1&random=<%= random %>" data='mcid-106'>神魔</a><a href="/film/hotManga?cid=/Animation/index_&page=_105______1&random=<%= random %>" data='mcid-105'>剧情</a><a href="/film/hotManga?cid=/Animation/index_&page=_104______1&random=<%= random %>" data='mcid-104'>恋爱</a><a href="/film/hotManga?cid=/Animation/index_&page=_64______1&random=<%= random %>" data='mcid-64'>励志</a><a href="/film/hotManga?cid=/Animation/index_&page=_128______1&random=<%= random %>" data='mcid-128'>惊悚</a><a href="/film/hotManga?cid=/Animation/index_&page=_62______1&random=<%= random %>" data='mcid-62'>家庭</a><a href="/film/hotManga?cid=/Animation/index_&page=_61______1&random=<%= random %>" data='mcid-61'>神话</a><a href="/film/hotManga?cid=/Animation/index_&page=_60______1&random=<%= random %>" data='mcid-60'>冒险</a><a href="/film/hotManga?cid=/Animation/index_&page=_59______1&random=<%= random %>" data='mcid-59'>热血</a><a href="/film/hotManga?cid=/Animation/index_&page=_58______1&random=<%= random %>" data='mcid-58'>搞笑</a><a href="/film/hotManga?cid=/Animation/index_&page=_57______1&random=<%= random %>" data='mcid-57'>少女</a><a href="/film/hotManga?cid=/Animation/index_&page=_56______1&random=<%= random %>" data='mcid-56'>魔幻</a><a href="/film/hotManga?cid=/Animation/index_&page=_55______1&random=<%= random %>" data='mcid-55'>机战</a><a href="/film/hotManga?cid=/Animation/index_&page=_54______1&random=<%= random %>" data='mcid-54'>推理</a><a href="/film/hotManga?cid=/Animation/index_&page=_53______1&random=<%= random %>" data='mcid-53'>校园</a><a href="/film/hotManga?cid=/Animation/index_&page=_52______1&random=<%= random %>" data='mcid-52'>竞技</a><a href="/film/hotManga?cid=/Animation/index_&page=_51______1&random=<%= random %>" data='mcid-51'>剧场</a><a href="/film/hotManga?cid=/Animation/index_&page=_50______1&random=<%= random %>" data='mcid-50'>益智</a><a href="/film/hotManga?cid=/Animation/index_&page=_49______1&random=<%= random %>" data='mcid-49'>童话</a><a href="/film/hotManga?cid=/Animation/index_&page=_48______1&random=<%= random %>" data='mcid-48'>格斗</a><a href="/film/hotManga?cid=/Animation/index_&page=_47______1&random=<%= random %>" data='mcid-47'>魔法</a><a href="/film/hotManga?cid=/Animation/index_&page=_46______1&random=<%= random %>" data='mcid-46'>经典</a><a href="/film/hotManga?cid=/Animation/index_&page=_126______1&random=<%= random %>" data='mcid-126'>预告</a> </p>
+                    </div>
+                </li>
+                <li>
+                    <!--连载-->
+                    <div class="con" id="firstsss_list_p">
+                        <a class="cur" href="#" data="lz-0">全部</a>
+                        <a href='/film/hotManga?cid=/Animation/index_&page=__1_____1&random=<%= random %>' data="lz-1">连载中</a>
+                        <a href='/film/hotManga?cid=/Animation/index_&page=__2_____1&random=<%= random %>' data="lz-2">已完结</a>
+                    </div>
+                </li>
+                <!-- <li id="third_list" style="overflow: hidden;overflow-x: scroll;-webkit-overflow-scrolling: touch;"> -->
+                    <!--年代-->
+<!--                     <div class="con" id="third_list_p">
+                        <p>
+                            <a class="cur" href="vod-show-id-3" data="year-0">全部</a>
+                            <a href='/film/hotManga?cid=id-3&page=year-2016' data='year-2016'>2016</a><a href='/film/hotManga?cid=id-3&page=year-2015' data='year-2015'>2015</a><a href='/film/hotManga?cid=id-3&page=year-2014' data='year-2014'>2014</a><a href='/film/hotManga?cid=id-3&page=year-2013' data='year-2013'>2013</a><a href='/film/hotManga?cid=id-3&page=year-2012' data='year-2012'>2012</a><a href='/film/hotManga?cid=id-3&page=year-2011' data='year-2011'>2011</a><a href='/film/hotManga?cid=id-3&page=year-2010' data='year-2010'>2010</a><a href='/film/hotManga?cid=id-3&page=year-2009' data='year-2009'>2009</a><a href='/film/hotManga?cid=id-3&page=year-2008' data='year-2008'>2008</a><a href='/film/hotManga?cid=id-3&page=year-2007' data='year-2007'>2007</a><a href='/film/hotManga?cid=id-3&page=year-2006' data='year-2006'>2006</a><a href='/film/hotManga?cid=id-3&page=year-2005' data='year-2005'>2005</a><a href='/film/hotManga?cid=id-3&page=year-2004' data='year-2004'>2004</a><a href='/film/hotManga?cid=id-3&page=year-2003' data='year-2003'>2003</a> </p>
+                    </div> -->
+                <!-- </li> -->
+            </ul>
+                <!-- // filter-focus end -->
+                <!-- filter-focus end -->
+                <div class="ui-bar fn-clear" style="height:45px; margin-bottom:10px;">
+                    <!-- view-mode end -->
+                    <div class="view-filter">
+                        <a href="/film/hotManga?cid=/Animation/index_&page=_____addtime__1&random=<%= random %>" class=' order' data="order-addtime"><span>按时间</span></a><em>|</em>
+                        <a href="/film/hotManga?cid=/Animation/index_&page=_____hits__1&random=<%= random %>" class='order' data="order-hits"><span>按人气</span></a><em>|</em>
+                        <a href="/film/hotManga?cid=/Animation/index_&page=_____gold__1&random=<%= random %>" class='order' data="order-gold"><span>按评分</span></a>
+                    </div>
+                </div>
+                <!-- // ui-bar end -->
+                <div class="globalPadding" id="data_list">
+                    <ul id="resize_list" class="picTxt picTxtA clearfix" >
+                        <% list.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                    <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                    <span class="sTit"><%= item.title %></span>
+                                </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            <div class="ui-bar list-page fn-clear">
+                    <div class="ui-page-big ui-pages" id="long-page">
+                        <strong>共<%= total %>部</strong>&nbsp;<a href="/film/hotManga?cid=<%= cid %>&page=<%= page %>&p=<%= p<=1 ? 1 : (p-1) %>&random=<%= random %>" class="next pagegbk">上一页</a>&nbsp;<a href="/film/hotManga?cid=<%= cid %>&page=<%= page %>&p=<%= parseInt(p)+1 %>&random=<%= random %>" class="next pagegbk">下一页</a></div>
+            </div>
+                <!-- // tbmov-box end -->
+            </section>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+            <script>
+            // 重置图片尺寸
+            $('#data_list img').lazyload({
+                data_attribute: 'src',
+                threshold: 30
+            });
+            </script>
+            <%- include footer.html %>
+    </div>
+</body>
+
+</html>

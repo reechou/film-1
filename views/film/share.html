@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <title>热门电影、美剧在线免费下载</title>
+  <meta name="keywords" content="电影，美剧">
+  <meta name="description" content="免费电影院提供:最新热门电影，最新热门美剧、韩剧、日剧等剧集在线观看">
+  <link rel="stylesheet" href="http://7xmsoo.com2.z0.glb.qiniucdn.com/jquery-weui/lib/weui.css">
+  <link rel="stylesheet" href="http://7xmsoo.com2.z0.glb.qiniucdn.com/jquery-weui/css/jquery-weui.css">
+  <link rel="stylesheet" href="/stylesheets/search.css">
+  <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+  var currUrl = window.location.href.replace(window.location.hash, '');
+  $.ajax({
+    url: 'http://www.lovelife8.com/oauth/signpackage?url=' + encodeURIComponent(currUrl),
+    type: "get",
+    dataType: "jsonp",
+    jsonp: "callback",
+    success: function(data) {
+      wx.config({
+        debug: false,
+        appId: data.appid,
+        timestamp: data.timestamp,
+        nonceStr: data.nonceStr,
+        signature: data.signature,
+        jsApiList: [
+          'checkJsApi', 'hideOptionMenu'
+        ]
+      });
+    }
+  });
+  </script>
+ <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));</script>
+</head>
+<style>
+	body,html{height: 100%}
+</style>
+<body>
+  <div class="detail-content">
+    <div class="download-more">
+      <h2>看电影分享得账号</h2>
+      <ul>
+        <p>
+          恭喜获得迅雷七天账号
+        </p>
+        <li>
+          <h3>长按复制账号 ↓↓↓</h3>
+          <a href="bbw360:<%= username %>" title="title">
+              <%= username %>
+            </a>
+        </li>
+        <li>
+          <h3>长按复制密码 ↓↓↓</h3>
+          <a href="bbw360:<%= password %>" title="title ">
+              <%= password %>
+            </a>
+        </li>
+        <p>
+          温馨提示：苹果手机用户在登录时请删除“bbw360:”再进行登录，否则会提示出错。
+        </p>
+      </ul>
+      <div class="hight-100px"></div>
+    </div>
+  </div>
+  <script src="http://7xmsoo.com2.z0.glb.qiniucdn.com/jquery-weui/lib/jquery-2.1.4.js"></script>
+  <script src="http://7xmsoo.com2.z0.glb.qiniucdn.com/jquery-weui/js/jquery-weui.js"></script>
+  <script type="text/javascript">
+        wx.ready(function() {
+          wx.hideOptionMenu();
+        });
+  </script>
+</body>
+
+</html>

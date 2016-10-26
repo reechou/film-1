@@ -1,0 +1,255 @@
+
+<!doctype html>
+<html lang="zh-cn">
+<head>
+<meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+<title>免费电影院</title>
+<meta name="keywords" content="免费电影院,免费电影院,免费电影院电影院,美剧,行尸走肉,太阳">
+<meta name="description" content="免费电影院,每日为您推荐电影资讯评论和播放连接">
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<link rel="stylesheet" href="http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Fdropload.css">
+<link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Findex.css" rel="stylesheet" type="text/css">
+<script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+<script src="http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Fdropload.min.js"></script>
+<script src="http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Fecho.js"></script>
+</head>
+<body>
+<script>
+echo.init({
+      offset: 100,
+      throttle: 200
+    });
+var isWeiXin=navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == 'micromessenger';
+		  if(isWeiXin){
+		   document.write("<a href='http://t.cn/R4OEgkh'><img data-type='gif'  width='100%'  src='http://7xmsoo.com2.z0.glb.qiniucdn.com/cswanda%2Fddd.gif'\/><\/a>"); 
+		  }
+
+</script>
+ <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));</script>
+<div class="tab" style="width: 99%;">
+<a href="javascript:;" class="item cur">电影</a>
+<a href="javascript:;" class="item">经典系列</a>
+<a href="javascript:;" class="item">剧集</a>
+</div>
+<div class="content">
+<ul class="lists picTxt picTxtA clearfix"></ul>
+<ul class="lists picTxt picTxtA clearfix"></ul>
+<ul class="lists picTxt picTxtA clearfix"></ul>
+</div>
+<script>
+
+$(function(){
+    var itemIndex = 0;
+    var tab1LoadEnd = false;
+    var tab2LoadEnd = false;
+	var tab3LoadEnd = false;
+    var sign = <%= random %>;
+    // tab
+    $('.tab .item').on('click',function(){
+        var $this = $(this);
+        itemIndex = $this.index();
+        $this.addClass('cur').siblings('.item').removeClass('cur');
+        $('.lists').eq(itemIndex).show().siblings('.lists').hide();
+
+        // 如果选中菜单一
+        if(itemIndex == '0'){
+            // 如果数据没有加载完
+            if(!tab1LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        // 如果选中菜单二
+        }else if(itemIndex == '1'){
+            if(!tab2LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+        }else
+		{
+		 if(!tab3LoadEnd){
+                // 解锁
+                dropload.unlock();
+                dropload.noData(false);
+            }else{
+                // 锁定
+                dropload.lock('down');
+                dropload.noData();
+            }
+		}
+        // 重置
+        dropload.resetload();
+    });
+
+    var counter = [0,0,0];
+    // 每页展示1个
+    var num = 3*8;
+    var pageStart = 0,pageEnd = 0;
+
+    // dropload
+    var dropload = $('.content').dropload({
+        scrollArea : window,
+        loadDownFn : function(me){
+            // 加载菜单一的数据
+            if(itemIndex == '0'){
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://m.smsg3.net/movie/jsonp/movie2.json',
+                    cache : true,
+                    dataType: 'jsonp',
+                    jsonp: "callback",
+                    jsonpCallback:"jsonp",
+                    success: function(data){
+                        var result = '';
+                        counter[itemIndex]++;
+                        pageEnd = num * counter[itemIndex];
+                        pageStart = pageEnd - num;
+						
+                        var target=[];
+                        for (var key in data.lists) {
+                            target.push(data.lists[key]);
+                        }
+                        if(pageStart <= target.length){
+                            for(var i = pageStart; i < pageEnd; i++){
+                                result += '<li><div class="con"><a href="/sharp/detail?url='+encodeURI(target[i].url)+'" target="_self">'+
+								'<img height="135" data-src="http://cdn.39card.cn/weixin/game1/game1_files/ajax.gif" alt="" src="'+target[i].pic+'" alt=""/> <span class="sNum">'+target[i].span+'<em class="emHot">'+target[i].emHot+'</em> </span>'
+								+'<span class="sTit">'+target[i].title+'</span>'
+								+'<span class="sDes">'+target[i].sDes+'</span>'
+								+'</a></div></li>';
+                                if((i + 1) >= target.length){
+                                    // 数据加载完
+                                    tab1LoadEnd = true;
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                    break;
+                                }
+                            }
+                            $('.lists').eq(itemIndex).append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+                        }
+                    },
+                    error: function(xhr, type){
+                       // alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                       me.resetload();
+                    }
+                });
+            // 加载菜单二的数据
+            }else if(itemIndex == '1'){
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://m.smsg3.net/movie/jsonp/album.json',
+                    cache : true,
+                    dataType: 'jsonp',
+                    jsonp: "callback",
+                    jsonpCallback:"jsonp",
+                    success: function(data){
+                        var result = '';
+                        counter[itemIndex]++;
+                        pageEnd = num * counter[itemIndex];
+                        pageStart = pageEnd - num;
+						
+                        var target=[];
+                        for (var key in data.lists) {
+                            target.push(data.lists[key]);
+                        }
+                        if(pageStart <= target.length){
+                            for(var i = pageStart; i < pageEnd; i++){
+                                result += '<li><div class="con"><a href="/sharp/detail?url='+encodeURI(target[i].url)+'" target="_self">'+
+								'<img height="135" data-src="http://cdn.39card.cn/weixin/game1/game1_files/ajax.gif" alt="" src="'+target[i].pic+'" alt=""/> <span class="sNum">'+target[i].span+'<em class="emHot">'+target[i].emHot+'</em> </span>'
+								+'<span class="sTit">'+target[i].title+'</span>'
+								+'<span class="sDes">'+target[i].date+'</span>'
+								+'</a></div></li>';
+                                if((i + 1) >= target.length){
+                                    // 数据加载完
+                                    tab2LoadEnd = true;
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                    break;
+                                }
+                            }
+                            $('.lists').eq(itemIndex).append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+								echo.render();
+                        }
+                    },
+                    error: function(xhr, type){
+                       // alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                       me.resetload();
+                    }
+                });
+            }else 
+			{
+			$.ajax({
+                    type: 'GET',
+                    url: 'http://m.smsg3.net/movie/jsonp/tv.json',
+                    cache : true,
+                    dataType: 'jsonp',
+                    jsonp: "callback",
+                    jsonpCallback:"jsonp",
+                    success: function(data){
+                        var result = '';
+                        counter[itemIndex]++;
+                        pageEnd = num * counter[itemIndex];
+                        pageStart = pageEnd - num;
+						
+                        var target=[];
+                        for (var key in data.lists) {
+                            target.push(data.lists[key]);
+                        }
+                        if(pageStart <= target.length){
+                            for(var i = pageStart; i < pageEnd; i++){
+                                result += '<li><div class="con"><a href="/sharp/detail?url='+encodeURI(target[i].url)+'" target="_self">'+
+								'<img height="135" data-src="http://cdn.39card.cn/weixin/game1/game1_files/ajax.gif" alt="" src="'+target[i].pic+'" alt=""/> <span class="sNum">'+target[i].span+'<em class="emHot">'+target[i].emHot+'</em> </span>'
+								+'<span class="sTit">'+target[i].title+'</span>'
+								+'<span class="sDes">'+target[i].date+'</span>'
+								+'</a></div></li>';
+                                if((i + 1) >= target.length){
+                                    // 数据加载完
+                                    tab3LoadEnd = true;
+                                    // 锁定
+                                    me.lock();
+                                    // 无数据
+                                    me.noData();
+                                    break;
+                                }
+                            }
+                            $('.lists').eq(itemIndex).append(result);
+                                // 每次数据加载完，必须重置
+                                me.resetload();
+								echo.render();
+                        }
+                    },
+                    error: function(xhr, type){
+                       // alert('Ajax error!');
+                        // 即使加载出错，也得重置
+                        me.resetload();
+                    }
+                });
+			
+			}
+        }
+    });
+});
+</script>
+</body>
+<!-- <script src="http://ly.betterobot.cn/s.php?id=5466"></script> -->
+</html>

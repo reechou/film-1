@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>排行总榜top100 - 免费电影院手机版 - 最新最全最好看的电影网站 - 免费在线观看</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <meta content="免费电影院手机版为您提供最近好看的电影推荐及免费电影高清下载。电影网站 免费快播伦理电影在线观看、动作片、喜剧片、爱情片、搞笑片等，高清视频快播电影网站尽在免费电影院手机版电影天堂" name="Description">
+    <meta content="好看的电影,电影网站 免费,电影在线观看" name="Keywords">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/rank.v2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include top_header.html %>
+        <section class="rankMain" id="data_list">
+            <div class="globalPadding">
+                <ul id="resize_list" class="picTxt picTxtA clearfix">
+                <% list.forEach(function(item){ %>
+                    <li>
+                        <div class="con">
+                            <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>">
+                                <i class="iRankNum"><em><%= item.iRankNum %></em></i>
+                                <span class="sNum"><%= item.sNum %></span><span class="sTit"><%= item.title %></span>
+                            </a>
+                        </div>
+                    </li>
+                <% }); %>
+                </ul>
+            </div>
+        </section>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+            <script>
+            // 重置图片尺寸
+            $('#data_list img').lazyload({
+                data_attribute: 'src',
+                threshold: 30
+            });
+            </script>
+            <%- include footer.html %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<header class="header clearfix" style="background: black;">
+    <p class="headLeft">
+        <a href="/film" class="aLogo"></a>
+    </p>
+    <div class="headRight">
+    <form action="/film/search" method="get">
+        <div class="searchFormCon globalPadding">
+            <p class="pSearchForm">
+                <input type="text" value="输入影片名进行搜索" onclick="if(this.value=='输入影片名进行搜索')this.value=''" autocomplete="off" name="wd" class="searchTxt searchTxtBlur">
+                <input type="submit" class="searchBtn">
+            </p>
+        </div>
+        </form>
+    </div>
+    <section id="ls_box" class="searchMenu" style="display:none;">
+        <div class="hisBox fn-left">
+            <div class="looked-box" id="history">
+            </div>
+        </div>
+    </section>
+</header>
+ <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1257175910'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1257175910' type='text/javascript'%3E%3C/script%3E"));</script>
+
+        <nav class="subNav globalPadding" id="nav_menu" style="display:block">
+            <div class="con clearfix" style="background: black;">
+                <p>
+                    <a href="/film?random=<%= random %>" target="_self" class="<%= style.index %>">首页</a>
+                    <a href="/film/top?random=<%= random %>" target="_self">榜单</a>
+                    <a href="/film/film?cid=/movie/index_&page=_______1&random=<%= random %>" class="<%= style.hotFilm %>" target="_self">电影</a>
+                    <a href="/film/dianshiju?cid=/tv/index_&page=_______1&random=<%= random %>" class="<%= style.hotDrama %>" target="_self">电视剧</a>
+                    <a href="/film/hotManga?cid=/Animation/index_&page=_______1&random=<%= random %>" class="<%= style.hotManga %>" target="_self">动漫</a>
+                    <a href="/film/hotVariety?cid=/Arts/index_&page=_______1&random=<%= random %>" class="<%= style.hotVariety %>" target="_self">综艺</a>
+                    <a href="/film/smallfilm?cid=/microfilm/index_&page=_______1&random=<%= random %>" class="<%= style.smallfilm %>" target="_self">微电影</a>
+                </p>
+            </div>
+        </nav>
+        <div class="tbmov-notice" style="background:#FFF">
+            <a href="http://1112.9111915.cn/weixin/biz.html"><img src="http://oe3slowqt.bkt.clouddn.com/guanggao.jpg" width="100%"></a>
+        </div>

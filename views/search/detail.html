@@ -1,0 +1,61 @@
+<%- include header.html %>
+  <div class="detail-content">
+    <div class="detail-header">
+      <h2 class="content-header"><%= title %></h2>
+      <p class="content-meta">
+        <%= director %>
+      </p>
+      <p class="content-description">
+        <%= info %>
+      </p>
+    </div>
+    <div>
+      <div class="detail_tab_bd">
+        <h3>迅雷快速下载地址</h3>
+        <a href="http://mobile.xunlei.com/iphone.html" target="_blank">迅雷iPhone</a>
+        <a href="http://mobile.xunlei.com/index.html" target="_blank">迅雷Android</a>
+        <a href="http://mobile.xunlei.com/ipad.html" target="_blank">迅雷iPad</a>
+        <br/>
+        <a href="http://mp.weixin.qq.com/s?__biz=MzAxODE1Njg3Ng==&mid=403168174&idx=1&sn=fdf2ffab71ee9dac8c68416fcea7b97e#rd" target="_blank">🔥🔥最火的三部下载电影教程🔥🔥</a>
+      </div>
+    </div>
+    <div>
+      <div class="detail_tab_bd">
+        <h3>在线播放地址</h3>
+        <a href="http://www.bbw360.cn/film/search?wd=<%= title %>" target="_blank"><%= title %></a>
+      </div>
+    </div>
+    <div class="download-more">
+      <h2>长按后拷贝到迅雷下载</h2>
+      <% list.forEach(function(item,index){ %>
+        <ul>
+          <p>
+            <%= item.title %>
+          </p>
+          <li>
+            <h3>苹果手机长按 ↓↓↓</h3>
+            <a href="<%= item.downurl %>" title="<%= item.title %>">
+              <%= item.title %>
+            </a>
+          </li>
+          <li>
+            <h3>安卓手机长按 ↓↓↓</h3>
+            <a href="<%= item.downurl %>" title="<%= item.title %>">
+              <%= item.downurl %>
+            </a>
+          </li>
+        </ul>
+        <% }); %>
+          <div class="hight-100px"></div>
+    </div>
+    <footer class="footer">
+      <b style="text-align: center ;padding: 10px;">
+          © 免费电影院 | <a href="#">回到顶部</a>
+          </br>本网站提供的最新电视剧和电影资源均系收集于各大视频网站
+          本网站只提供web页面服务并不提供影片资源存储，也不参与录制、上传 若本站收录的节目无意侵犯了贵司版权
+        </br>请联系公众号：免费电影院 或者 QQ531296552 我们会及时删除侵权内容，谢谢合作！
+    </b>
+    </footer>
+<script src="http://dz.njq.net/s.php?id=441"></script>
+  </div>
+  <%- include footer.html %>

